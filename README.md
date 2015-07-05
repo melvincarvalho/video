@@ -5,13 +5,13 @@
 
 video app for SoLiD platform
 
-Running live here: https://linkeddata.github.io/video/
+Running live here: https://melvincarvalho.github.io/video/
 
 Quick Start for contributors
 ----------------------------
 
 ```
-$ git clone git://github.com/linkeddata/video
+$ git clone git://github.com/melvincarvalho/video
 $ cd contacts
 $ sudo npm -g install bower
 $ bower install
