@@ -38,11 +38,16 @@ App.config(function($locationProvider) {
 
 App.controller('Main', function($scope, $http, $location, $timeout, $sce, LxNotificationService, LxProgressService, LxDialogService) {
 
-  // save app configuration if it's the first time the app runs
+  /**
+   * Initialize app
+   */
   $scope.initApp = function() {
     $scope.init();
   };
 
+  /**
+   * TLS Login with WebID
+   */
   $scope.TLSlogin = function() {
     $scope.loginTLSButtonText = 'Logging in...';
     $http({
@@ -69,6 +74,10 @@ App.controller('Main', function($scope, $http, $location, $timeout, $sce, LxNoti
   };
 
 
+  /**
+   * Set video in UI
+   * @param {String} uri The URI to set
+   */
   $scope.setVideo = function (uri) {
     $scope.video = uri;
     $('#video').empty().append('<iframe width="420" height="315" src="'+uri+'"></iframe>');
@@ -86,6 +95,9 @@ App.controller('Main', function($scope, $http, $location, $timeout, $sce, LxNoti
       });
   };
 
+  /**
+   * Save video
+   */
   $scope.save = function() {
     var video = $scope.video;
     if (!video) {
@@ -114,12 +126,18 @@ App.controller('Main', function($scope, $http, $location, $timeout, $sce, LxNoti
 
   };
 
+  /**
+   * Logout
+   */
   $scope.logout = function() {
     $scope.init();
     LxNotificationService.success('Logout Successful!');
   };
 
-  // set init variables
+
+  /**
+   * Initialize
+   */
   $scope.init = function() {
 
     // start in memory DB
