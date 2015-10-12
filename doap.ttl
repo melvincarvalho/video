@@ -1,0 +1,14 @@
+<#this>
+    a <http://usefulinc.com/ns/doap#Project>, <http://www.w3.org/ns/solid/app#Configuration> ;
+    <http://usefulinc.com/ns/doap#description> "A Video Saving for the SoLiD platform" ;
+    <http://usefulinc.com/ns/doap#download-page> <https://melvincarvalho.github.io/video/> ;
+    <http://usefulinc.com/ns/doap#homepage> <https://melvincarvalho.github.io/video/> ;
+    <http://usefulinc.com/ns/doap#license> "mit" ;
+    <http://usefulinc.com/ns/doap#maintainer> <http://melvincarvalho.com/#me> ;
+    <http://usefulinc.com/ns/doap#name> "Video" ;
+    <http://usefulinc.com/ns/doap#shortdesc> "A Video App for the SoLiD platform" ;
+    <http://usefulinc.com/ns/doap#shortname> "Video" ;
+    <http://www.w3.org/ns/solid/app#description> "A Video App for the SoLiD platform" ;
+    <http://www.w3.org/ns/solid/app#homepage> <https://melvincarvalho.github.io/video/> ;
+    <http://www.w3.org/ns/solid/app#icon> <http://melvincarvalho.github.io/video/images/icon.png> ;
+    <http://www.w3.org/ns/solid/app#name> "Video" .
