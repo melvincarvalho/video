@@ -76,7 +76,6 @@ App.controller('Main', function($scope, $http, $location, $timeout, $sce, LxNoti
 
   /**
    * Set video in UI
-   * @param {String} uri The URI to set
    */
   $scope.setVideo = function (uri) {
     $scope.video = uri;
