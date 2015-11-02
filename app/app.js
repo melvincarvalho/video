@@ -98,7 +98,8 @@ App.controller('Main', function($scope, $http, $location, $timeout, LxNotificati
       width = 425;
     }
     var height = Math.round(( width * 3 ) / 4);
-    var iframe = '<iframe width="' + width + '" height="' + height + '" src="'+uri+'"></iframe>';
+    var iframe = '<iframe width="' + width + '" height="' + height +
+                 '" src="'+uri+'"></iframe>';
     console.log(iframe);
     $('#video').empty().append(iframe);
   };
