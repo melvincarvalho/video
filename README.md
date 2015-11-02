@@ -54,7 +54,7 @@ The predicate here is an HTTP URI that uses the [SIOC](http://rdfs.org/sioc/spec
   };
 ```
 
-The setVideo function simply embeds the video file in an iframe element after determining the width and height (for mobile optimization).
+The setVideo function simply embeds the video file in an iframe element after determining the width and height (for mobile optimization).  Note: that because of [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) not all video URLs are embeddable in an iframe.  For example with youtube videos they URL shoudl take the form `/embed/<id>`.
 
 ```JavaScript
     var height = Math.round(( width * 3 ) / 4);
@@ -158,7 +158,7 @@ When all this is combined you will see a running something like:
 
 # Summary
 
-In this tutorial we showed how to embed video in a page.  Some more advanced UI techniques such as sidebar, menu and dialog boxes were covered.  We also showed how to make your app sematnically rich using maifests, DOAP and auto discovery.
+In this tutorial we showed how to embed video in a page.  Some more advanced UI techniques such as sidebar, menu and dialog boxes were covered.  We also showed how to make your app sematnically rich using maifests, DOAP and auto discovery.  In the next tutorial we will show how to create realtime updates using websockets.
 
 ## See Also
 
@@ -168,3 +168,4 @@ In this tutorial we showed how to embed video in a page.  Some more advanced UI 
 * [How to get started with CSS flexbox](http://www.paulund.co.uk/css-flexbox)
 * [manifest.json](https://developer.chrome.com/extensions/manifest)
 * [DOAP](https://github.com/edumbill/doap/wiki)
+* [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
