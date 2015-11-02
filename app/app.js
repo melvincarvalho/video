@@ -100,8 +100,8 @@ App.controller('Main', function($scope, $http, $location, $timeout, LxNotificati
     var height = Math.round(( width * 3 ) / 4);
     var iframe = '<iframe width="' + width + '" height="' + height +
                  '" src="'+uri+'"></iframe>';
-    console.log(iframe);
     $('#video').empty().append(iframe);
+    $location.search('storageURI', $scope.storageURI);
   };
 
   /**
