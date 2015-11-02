@@ -55,6 +55,7 @@ App.controller('Main', function($scope, $http, $location, $timeout, LxNotificati
         $scope.notify('Login Successful!');
         $scope.loggedIn = true;
         $scope.user = user;
+        $scope.fetchVideo();
       } else {
         $scope.notify('WebID-TLS authentication failed.', 'error');
       }
@@ -92,7 +93,14 @@ App.controller('Main', function($scope, $http, $location, $timeout, LxNotificati
   */
   $scope.setVideo = function (uri) {
     $scope.video = uri;
-    $('#video').empty().append('<iframe width="420" height="315" src="'+uri+'"></iframe>');
+    var width = $('#video').width();
+    if (width > 425) {
+      width = 425;
+    }
+    var height = Math.round(( width * 3 ) / 4);
+    var iframe = '<iframe width="' + width + '" height="' + height + '" src="'+uri+'"></iframe>';
+    console.log(iframe);
+    $('#video').empty().append(iframe);
   };
 
   /**
@@ -151,17 +159,21 @@ App.controller('Main', function($scope, $http, $location, $timeout, LxNotificati
     g = $rdf.graph();
     f = $rdf.fetcher(g);
 
-    var storageURI = 'https://video.databox.me/Public/.video/test';
+    $scope.storageURI = 'https://video.databox.me/Public/.video/test';
     if ($location.search().storageURI) {
-      storageURI = $location.search().storageURI;
+      $scope.storageURI = $location.search().storageURI;
     }
 
-    f.nowOrWhenFetched(storageURI, undefined, function(ok, body) {
-      var video = g.any($rdf.sym(storageURI + '#this'), SIOC('content'));
-      $scope.setVideo(video);
-      $scope.storageURI = storageURI;
-    });
+  };
 
+  /**
+   * Fetches the video
+   */
+  $scope.fetchVideo = function() {
+    f.nowOrWhenFetched($scope.storageURI, undefined, function(ok, body) {
+      var video = g.any($rdf.sym($scope.storageURI + '#this'), SIOC('content'));
+      $scope.setVideo(video);
+    });
   };
 
   $scope.initApp();
