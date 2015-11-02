@@ -67,85 +67,95 @@
     <!-- end menu -->
 
 
+    <!-- flexbox row -->
     <div class="tc-white-1" flex-container="row">
+
+      <!-- sidebar -->
       <div flex-item="2" flex-item-order="1">
-        <div class="sidebar sidebar--shown"
-        ng-class="{'sidebar--shown': isVisible()}">
-        <div class="sidebar-menu">
-          <ul>
-            <li><a class="sidebar-menu__link">Sidebar</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div flex-item="6" flex-item-order="2"><div>
-      <div>
-        <div id="video"></div>
-        <div><a href="{{user}}">{{user}}</a></div>
-        <div flex-container="row" flex-gutter="24">
-          <div flex-item>
-            <lx-text-field label="Video URI">
-              <input type="text" ng-model="video">
-            </lx-text-field>
+        <div class="sidebar sidebar--shown" ng-class="{'sidebar--shown': isVisible()}">
+          <div class="sidebar-menu">
+            <ul>
+              <li><a class="sidebar-menu__link">Sidebar</a></li>
+            </ul>
           </div>
         </div>
-        <div flex-container="row" flex-gutter="24">
-          <div flex-item>
-            <lx-text-field label="Storage URI">
-              <input type="text" ng-model="storageURI">
-            </lx-text-field>
+      </div>
+      <!-- end sidebar -->
+
+      <!-- main app -->
+      <div flex-item="6" flex-item-order="2">
+        <div>
+          <div>
+            <div id="video"></div>
+            <div><a href="{{user}}">{{user}}</a></div>
+            <div flex-container="row" flex-gutter="24">
+              <div flex-item>
+                <lx-text-field label="Video URI">
+                  <input type="text" ng-model="video">
+                </lx-text-field>
+              </div>
+            </div>
+            <div flex-container="row" flex-gutter="24">
+              <div flex-item>
+                <lx-text-field label="Storage URI">
+                  <input type="text" ng-model="storageURI">
+                </lx-text-field>
+              </div>
+            </div>
+            <button class="btn btn--m btn--blue btn--raised" lx-ripple lx-ripple aria-label="save" ng-click="save()">
+              Save Video
+            </button>
+            <button class="btn btn--m btn--blue btn--raised" lx-ripple lx-ripple aria-label="logout" ng-click="logout()">
+              Logout
+            </button>
           </div>
         </div>
-        <button class="btn btn--m btn--blue btn--raised" lx-ripple lx-ripple aria-label="save" ng-click="save()">
-          Save Video
-        </button>
-        <button class="btn btn--m btn--blue btn--raised" lx-ripple lx-ripple aria-label="logout" ng-click="logout()">
-          Logout
-        </button>
+      </div>
+      <!-- end main app -->
+
+    </div>
+    <!-- end flexbox row -->
+
+  </div>
+  <!-- end main page -->
+
+
+  <!-- about -->
+  <lx-dialog class="dialog dialog--l" auto-close="true" id="about">
+    <div class="dialog__header">
+      <div class="toolbar bgc-blue-A700 pl+">
+        <span class="toolbar__label tc-white fs-title">
+          About Video
+        </span>
+        <div class="toolbar__right">
+          <button class="btn btn--l btn--white btn--icon" lx-ripple lx-dialog-close>
+            <span aria-hidden="true" class="mdi mdi-close"></span>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- end main page -->
-
-
-<!-- about -->
-<lx-dialog class="dialog dialog--l" auto-close="true" id="about">
-  <div class="dialog__header">
-    <div class="toolbar bgc-blue-A700 pl+">
-      <span class="toolbar__label tc-white fs-title">
-        About Video
-      </span>
-      <div class="toolbar__right">
-        <button class="btn btn--l btn--white btn--icon" lx-ripple lx-dialog-close>
-          <span aria-hidden="true" class="mdi mdi-close"></span>
-        </button>
-      </div>
+    <div class="dialog__content p+">
+      <p>Video is a personal video manager, that uses Linked Data to store a video on your personal online datastore.</p>
+      <br>
+      <p>This application follows the <a href="https://github.com/solid/solid-spec/">SoLiD specifications</a> to ensure that your data stays private.</p>
     </div>
-  </div>
-  <div class="dialog__content p+">
-    <p>Video is a personal video manager, that uses Linked Data to store a video on your personal online datastore.</p>
-    <br>
-    <p>This application follows the <a href="https://github.com/solid/solid-spec/">SoLiD specifications</a> to ensure that your data stays private.</p>
-  </div>
-  <div class="dialog__actions">
-    <button class="btn btn--m btn--black btn--flat" lx-ripple lx-dialog-close>Close</button>
-  </div>
-</lx-dialog>
-<!-- end about -->
+    <div class="dialog__actions">
+      <button class="btn btn--m btn--black btn--flat" lx-ripple lx-dialog-close>Close</button>
+    </div>
+  </lx-dialog>
+  <!-- end about -->
 
 
-<!-- Deps -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/velocity/velocity.min.js"></script>
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-ui/build/angular-ui.min.js"></script>
-<script src="bower_components/lumx/dist/lumx.min.js"></script>
-<script src="vendor/rdflib.min.js"></script>
-<script src="vendor/common.js"></script>
-<!-- App -->
-<script src="app/app.js"></script>
+  <!-- Deps -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/velocity/velocity.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+  <script src="bower_components/lumx/dist/lumx.min.js"></script>
+  <script src="vendor/rdflib.min.js"></script>
+  <script src="vendor/common.js"></script>
+  <!-- App -->
+  <script src="app/app.js"></script>
 </body>
 
 </html>
