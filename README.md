@@ -19,6 +19,10 @@ $ bower install
 
 # Tutorial
 
+# Chapter 3 - Solid Video
+
+![](https://melvincarvalho.gitbooks.io/solid-tutorials/content/video.png)
+
 ## Introduction
 
 In this tutorial we will cover how to load and save data video links to a Personal Online Datastore (Pod) and display it on screen.  A slightly more sophisticated UI will also be used.
