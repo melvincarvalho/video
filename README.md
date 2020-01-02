@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/melvincarvalho/video](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/melvincarvalho/video?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-video app for SoLiD platform
+video app for Solid platform
 
 Running live here: https://melvincarvalho.github.io/video/
 
