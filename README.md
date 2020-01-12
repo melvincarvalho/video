@@ -51,8 +51,8 @@ The predicate here is an HTTP URI that uses the [SIOC](http://rdfs.org/sioc/spec
 ```JavaScript
   $scope.fetchVideo = function() {
     f.nowOrWhenFetched($scope.storageURI, undefined, function(ok, body) {
-      var video = g.any($rdf.sym($scope.storageURI + '#this'), SIOC('content'));
-      $scope.setVideo(video);
+      var video = g.any($rdf.sym($scope.storageURI + '#this'), SIOC('content'))
+      $scope.setVideo(video)
     });
   };
 ```
@@ -60,10 +60,10 @@ The predicate here is an HTTP URI that uses the [SIOC](http://rdfs.org/sioc/spec
 The setVideo function simply embeds the video file in an iframe element after determining the width and height (for mobile optimization).  Note: that because of [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) not all video URLs are embeddable in an iframe.  For example with youtube videos they URL should take the form `/embed/<id>`.
 
 ```JavaScript
-    var height = Math.round(( width * 3 ) / 4);
+    var height = Math.round(( width * 3 ) / 4)
     var iframe = '<iframe width="' + width + '" height="' + height +
-                 '" src="'+uri+'"></iframe>';
-    $('#video').empty().append(iframe);
+                 '" src="'+uri+'"></iframe>'
+    $('#video').empty().append(iframe)
 ```
 
 While previous apps have been a single canvas, this app adds a few more features to allow extensibility.  Flexbox is used to add a header and side bar.  There are many [guides](http://www.paulund.co.uk/css-flexbox) to flexbox online, so it wont be covered here.
@@ -99,10 +99,10 @@ The code snippet above shows the addition of a menu toolbar.  In this case some 
 
 ```JavaScript
   $scope.openDialog = function(elem) {
-    LxDialogService.open(elem);
+    LxDialogService.open(elem)
     $(document).keyup(function(e) {
       if (e.keyCode===27) {
-        LxDialogService.close(elem);
+        LxDialogService.close(elem)
       }
     });
   };
